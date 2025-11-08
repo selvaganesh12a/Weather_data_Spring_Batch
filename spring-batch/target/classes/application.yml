@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: spring-batch
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_batch
+    username: root
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  batch:
+    jdbc:
+      initialize-schema: ALWAYS
+    job:
+      enabled: false
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 50MB
+      max-request-size: 50MB
+batch:
+  file:
+    path: src/main/resources
